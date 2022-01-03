@@ -48,7 +48,7 @@ function CarouselSlide({ movie, mediaType, apiImageUrl, genres }) {
       <div className="container pt-56 w-11/12 sm:w-9/12 md:w-7/12">
         <h1
           className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold cursor-pointer
-        hover:text-gray-300 transition duration-300"
+        hover:text-gray-300 transition duration-300 line-clamp-3 pb-2"
           onClick={() => {
             router.push(`/${movie.media_type || mediaType}/${movie.id}`);
           }}

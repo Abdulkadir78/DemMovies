@@ -2,9 +2,13 @@ import Head from "next/head";
 
 import MoviesProvider from "../contexts/Movies";
 import GenresProvider from "../contexts/Genres";
+import Loader from "../components/Shared/Loader";
+import useLoader from "../hooks/useLoader";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
+  const { loading } = useLoader();
+
   return (
     <>
       <Head>
@@ -15,7 +19,7 @@ function MyApp({ Component, pageProps }) {
 
       <GenresProvider>
         <MoviesProvider>
-          <Component {...pageProps} />
+          {loading ? <Loader /> : <Component {...pageProps} />}
         </MoviesProvider>
       </GenresProvider>
     </>

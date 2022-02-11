@@ -14,7 +14,7 @@ function Catalog() {
   const { mediaType, totalPages } = useContext(MoviesContext);
 
   return (
-    <div className="container mb-10">
+    <div className="container mx-auto mb-10">
       <h1 className="text-3xl font-bold mt-20">
         {mapMediaTypeToText[mediaType] || "Trending"}
       </h1>
